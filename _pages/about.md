@@ -8,4 +8,3 @@ header:
 ---
 
 Hello
-continuous learner
