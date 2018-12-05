@@ -1,12 +1,13 @@
 ---
 title: Web Scraping TripAdvisor and Text Mining
-date: 2018-10-17
+date: 2018-10-28
 tags: 
   - Web Scraping
-  - NLP
+  - Text Analytics
 header:
-  image: ""
-excerpt: "Web Scraping, NLP"
+  image: "/images/WebScrapingTripAdvisor/mbs.jpg"
+  teaser: "/images/WebScrapingTripAdvisor/mbs.jpg"
+excerpt: "Web Scraping, Text Analytics"
 mathjax: "true"
 ---
 These days lots of unstructured data is available on the internet, the dataset used will be extracted from TripAdvisor. 
@@ -621,12 +622,3 @@ plt.tight_layout()
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/WebScrapingTripAdvisor/chart.png" alt="">
 
-
-
-
-```python
-
-```
-{% highlight text %}
-
-{% endhighlight %} 
