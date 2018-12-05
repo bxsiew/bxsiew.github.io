@@ -17,7 +17,6 @@ I performed a web scraping on TripAdvisor for the hotel, Marina Bay Sands, using
 
 
 
-
 <img src="{{ site.url }}{{ site.baseurl }}/images/WebScrapingTripAdvisor/page1.png" alt="">
 
 The items to be retrieved are:
