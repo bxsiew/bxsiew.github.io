@@ -11,6 +11,7 @@ excerpt: "Neural Network, Regression"
 mathjax: "true"
 ---
 
+
 Working with historical data to predict the future stock price of Google. This dataset is taken from Kaggle, [AMD and GOOGLE Stock Price](https://www.kaggle.com/gunhee/amdgoogle).
 
 The variables in the dataset are:
