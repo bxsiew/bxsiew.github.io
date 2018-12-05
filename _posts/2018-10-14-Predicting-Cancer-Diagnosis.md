@@ -1,12 +1,13 @@
 ---
-title: Project
+title: Predicting Cancer Diagnosis
 date: 2018-10-14
 tags: 
-  - machine learning
-  - data science
+  - Machine Learning
+  - Classification
 header:
-  image: ""
-excerpt: "Machine Learning, Data Science"
+  image: "/images/project/diagnosis.jpg"
+  teaser: "/images/project/diagnosis.jpg"
+excerpt: "Machine Learning, Classification"
 ---
 
 The aim is to predict if the cancer diagnosis is benign or malignant based on several observations/features.
@@ -80,7 +81,7 @@ cancer
  'target_names': array(['malignant', 'benign'], dtype='<U9')}
 {% endhighlight %} 
 
-View the keys within the cancer's dictionary
+### View the keys within the cancer's dictionary
 ```python
 cancer.keys()
 ```
@@ -88,7 +89,7 @@ cancer.keys()
 dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names'])
 {% endhighlight %} 
 
-Print the description key
+### Print the description key
 ```python
 print(cancer['DESCR'])
 ```
@@ -212,7 +213,7 @@ References
      163-171.
 {% endhighlight %} 
 
-Print the target names
+### Print the target names
 ```python
 print(cancer['target_names'])
 ```
@@ -220,7 +221,7 @@ print(cancer['target_names'])
 ['malignant' 'benign']
 {% endhighlight %} 
 
-Print the target class, in binary form (0=malignant, 1=benign)
+### Print the target class, in binary form (0=malignant, 1=benign)
 ```python
 print(cancer['target'])
 ```
@@ -243,7 +244,7 @@ print(cancer['target'])
  1 1 1 1 1 1 1 0 0 0 0 0 0 1]
 {% endhighlight %} 
 
-Print the feature names
+### Print the feature names
 ```python
 print(cancer['feature_names'])
 ```
@@ -259,6 +260,7 @@ print(cancer['feature_names'])
  'worst concave points' 'worst symmetry' 'worst fractal dimension']
 {% endhighlight %}
 
+### Print the data
 ```python
 print(cancer['data'])
 ```
@@ -272,7 +274,7 @@ print(cancer['data'])
  [7.760e+00 2.454e+01 4.792e+01 ... 0.000e+00 2.871e-01 7.039e-02]]
 {% endhighlight %}
 
-View the shape of the data
+### View the shape of the data
 ```python
 cancer['data'].shape
 ```
@@ -280,7 +282,7 @@ cancer['data'].shape
 (569, 30)
 {% endhighlight %}
 
-Create a dataframe using pandas for preprocessing
+### Create a dataframe using pandas for preprocessing
 ```python
 #np.c_ used for column stack, np.append used to append two columns together
 df_cancer = pd.DataFrame(np.c_[cancer['data'], cancer['target']], columns = np.append(cancer['feature_names'], ['target']))
@@ -440,7 +442,7 @@ df_cancer.head()
 <p>5 rows × 31 columns</p>
 </div>
 
-View the statistics of the data
+### View the statistics of the data
 ```python
 df_cancer.describe()
 ```
@@ -670,7 +672,7 @@ df_cancer.describe()
 <p>8 rows × 31 columns</p>
 </div>
 
-View the data types
+### View the data types
 ```python
 df_cancer.dtypes
 ```
@@ -710,30 +712,30 @@ dtype: object
 {% endhighlight %}
 
 ## 2) Exploratory data analysis
-Display a pairplot on the first 5 features
+### Display a pairplot on the first 5 features
 ```python
 sns.pairplot(df_cancer, hue = 'target', vars = ['mean radius', 'mean texture', 'mean area', 'mean perimeter', 'mean smoothness'] )
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/project/pairplot.jpg" alt="">
 
-A count of the target names in the dataset
+### A count of the target names in the dataset
 ```python
 sns.countplot(df_cancer['target'], label = "Count") 
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/project/count.jpg" alt="">
 
-Display the correlation among features
+### Display the correlation among features
 ```python
 plt.figure(figsize=(20,10)) 
 sns.heatmap(df_cancer.corr(), annot=True) 
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/project/heatmap.jpg" alt="">
 
-We could see a strong correlation between the mean radius and mean perimeter, mean area and mean primeter
+We could see a strong correlation between the mean radius and mean perimeter, mean area and mean primeter.
 
 ## 3) Modeling
 
-Let's drop the target label columns to prepare for training & testing phrase
+Let's drop the target label columns to prepare for training & testing phrase.
 ```python
 X = df_cancer.drop(['target'],axis=1)
 ```
@@ -815,6 +817,7 @@ The results suggest that both Logistic Regression and Linear Discriminant Analys
 ### Feature scaling
 Suspecting that varied distributions of the features may be impacting the skill of some of the algorithms, we perform a data normalization, such that each attribute has a mean value of 0 and a standard deviation of 1.
 ```python
+from sklearn.preprocessing import StandardScaler
 pipelines = []
 pipelines.append(('ScaledLR', Pipeline([('Scaler', StandardScaler()),('LR', LogisticRegression())])))
 pipelines.append(('ScaledLDA', Pipeline([('Scaler', StandardScaler()),('LDA', LinearDiscriminantAnalysis())])))
@@ -861,6 +864,15 @@ Looking into ensemble methods could improve the performance of algorithms on thi
 **Bagging Methods:** Random Forests(RF) and Extra Trees(ET).
 <br/>
 Using the same settings, a 10-fold cross validation and evaluate using the accuracy scoring metric. No data normalization is used because all four ensemble algorithms are based on decision trees that are less sensitive to data distributions.
+<br/>
+<br/>
+Import libraries
+```python
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import ExtraTreesRegressor
+from sklearn.ensemble import AdaBoostRegressor
+```
 ```python
 # ensembles
 ensembles = []
@@ -1046,21 +1058,7 @@ avg / total       0.97      0.96      0.96       114
 
 ## 5) Conclusion
 * Both Logistic Regression and Support Vector Machine are performing equally good. Achieving an accuracy of 97% and 96% respectively on the test dataset.
-* Looking at the Confusion Matrix for the Logistic Regression, it misclassified a total of 3 cases, 2 to be positive(malignant) and 1 to be negative(benign).
-* Consider Type 1 error(False positive) or Type 2 error(False negative)
-* We would like to avoid a type II error, because wrongly predicting a malignant case as a benign case would be severe given that cancer is a life threatening disease.
+* Looking at the Confusion Matrix for the Logistic Regression, it misclassified a total of 3 cases, 2 to be positive and 1 to be negative.
+* We would like to avoid a Type II error(False negative), because wrongly predicting a malignant case as a benign case would be severe given that cancer is a life threatening disease.
 
 
-Here's some basic text.
-and here's some *italics*
-here's some **bold** text
-
-Here's a bulleted list:
-* First item
-+ Second item
-- Third item
-
-Here's a numbered list:
-1. First
-2. Second
-3. Third
