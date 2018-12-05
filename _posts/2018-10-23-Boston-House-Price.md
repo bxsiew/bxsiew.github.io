@@ -1,12 +1,14 @@
 ---
-title: Boston House Price
-date: 2018-10-22
+title: Predicting Boston House Pricing
+date: 2018-10-23
 tags: 
-  - machine learning
-  - data science
+  - Machine Learning
+  - Neural Network
+  - Regression
 header:
-  image: ""
-excerpt: "Machine Learning, Data Science"
+  image: "/images/Boston House Price/boston.jpg"
+  teaser: "/images/Boston House Price/boston.jpg"
+excerpt: "Machine Learning, Neural Network, Regression"
 mathjax: "true"
 ---
 
@@ -2793,13 +2795,4 @@ print("2) R squared: {0:.4f}\n".format(r2_score(Y_validation, predictions)))
 {% endhighlight %} 
 The results shows that the estimated mean squared error is 9.27, which is quite close to the tuned model. The R squared value indicates a high goodness of fit.
 
-
-
-
-```python
-
-```
-{% highlight text %}
-
-{% endhighlight %} 
 
