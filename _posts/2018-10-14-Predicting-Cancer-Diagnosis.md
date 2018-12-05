@@ -12,6 +12,7 @@ excerpt: "Machine Learning, Classification"
 
 The aim is to predict if the cancer diagnosis is benign or malignant based on several observations/features.
 This dataset was taken from the scikit-learn's datasets package (breast cancer wisconsin dataset), a copy of UCI ML Breast Cancer Wisconsin (Diagnostic) datasets.
+
 ## 1) Setup
 ### Load packages
 ```python
