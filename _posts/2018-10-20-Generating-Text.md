@@ -1,16 +1,18 @@
 ---
-title: Generating Text
+title: Generating Text with RNN Long Short-Term Memory
 date: 2018-10-20
 tags: 
-  - machine learning
-  - data science
+  - Neural Network
+  - Text Analytics
 header:
-  image: ""
-excerpt: "Machine Learning, Data Science"
+  image: "/images/Generating Text/book.jpg"
+  teaser: "/images/Generating Text/book.jpg"
+excerpt: "Neural Network, Text Analytics"
 ---
 
 The aim is to develop a model generating text, character by character using LSTM recurrent neural networks with Keras. 
 <br/>
+
 The dataset used to create the generative model is taken from Project Gutenberg, a site to get access to free books that are no longer protected by copyright. We will be using the text from Alice's Adventures in Wonderland by Lewis Carroll to train the model and also be running on GPU to speed up the computation.
 <img src="{{ site.url }}{{ site.baseurl }}/images/Generating Text/Alice colour.png" alt="">
 ## 1) Setup
@@ -674,11 +676,6 @@ Note some observations about the generate text:
 ## 6) Conclusion
 With a sufficiently trained model, we could generate realistic text that are more language-like and legible, which at one glance could be difficult to be differentiated from actual written text by humans.
 <br/>
+
 To further improve the model, we could try tuning the model, such as the number of epochs, memory units, batch size or even the dropout percentage to see if we can develop a better model. We could also explore developing a word-based language model rather than a character-based model.
 
-```python
-
-```
-{% highlight text %}
-
-{% endhighlight %} 
