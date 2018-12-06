@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Bing Xiang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "A data science enthusiast. Fascinated to discover and learn. /n ----------------"
+  bio              : "A data science enthusiast.                     Fascinated to discover and learn.                        --------------------------"
   location         : 
   email            :
   links:
