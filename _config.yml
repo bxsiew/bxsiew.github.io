@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "BX |Data Science Diary"
 title_separator          : "-"
 name                     : "Bing Xiang"
-description              : "An amazing website."
+description              : "Data Science Diary"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Bing Xiang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "A data science enthusiast.                     Fascinated to discover and learn.                        --------------------------"
+  bio              : "A data science enthusiast. Fascinated to discover and learn."
   location         : 
   email            :
   links:
