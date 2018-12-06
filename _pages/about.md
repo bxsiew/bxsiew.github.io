@@ -14,4 +14,4 @@ I am a continuous learner and like to explore new approaches to methods used in 
 Some of my favorite websites where i can get inspiration and also to keep up to date with are:
 * [Towards Data Science](https://towardsdatascience.com/) a place where people wrote articles sharing ideas of various data science concepts, 
 * [Kaggle](https://www.kaggle.com/) a website that allows users to participate as well as engage and exchange their thoughts on various datasets. hosted in the website, 
-* Last but not least Youtube. :)
+* Last but not least YouTube. :)
