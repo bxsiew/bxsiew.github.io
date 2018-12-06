@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "BX |Data Science Diary"
 title_separator          : "-"
-name                     : "BX"
+name                     : "Bing Xiang"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -101,9 +101,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "BX"
+  name             : "Bing Xiang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "-----------"
+  bio              : "A data science enthusiast. Fascinated to discover and learn. /n ----------------"
   location         : 
   email            :
   links:
